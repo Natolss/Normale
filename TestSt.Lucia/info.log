@@ -1,0 +1,24 @@
+2022-01-06 11:11:09   Arguments: Namespace(cache_refresh_rate=1000, datasets_folder='/content/st_lucia', device='cuda', epochs_num=50, exp_name='default', infer_batch_size=16, lr=1e-05, margin=0.1, neg_samples_num=1000, negs_num_per_query=10, num_workers=8, output_folder='runs/default/2022-01-06_11-11-09', patience=3, queries_per_epoch=5000, recall_values=[1, 5, 10, 20], seed=0, train_batch_size=4, train_positives_dist_threshold=10, val_positive_dist_threshold=25)
+2022-01-06 11:11:09   The outputs are being saved in runs/default/2022-01-06_11-11-09
+2022-01-06 11:11:09   Using 1 GPUs and 2 CPUs
+2022-01-06 11:11:09   Test set: < BaseDataset, st_lucia - #database: 1549; #queries: 1464 >
+2022-01-06 11:11:11   
+Traceback (most recent call last):
+  File "test.py", line 14, in <module>
+    import test
+  File "/content/drive/MyDrive/NormaleSt.Lucia/test.py", line 41, in <module>
+    best_model_state_dict = torch.load("/content/drive/MyDrive/NormaleSt.Lucia/runs/default/2022-01-05_14-53-45/best_model.pth", "best_model.pth")["model_state_dict"]
+  File "/usr/local/lib/python3.7/dist-packages/torch/serialization.py", line 594, in load
+    return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
+  File "/usr/local/lib/python3.7/dist-packages/torch/serialization.py", line 853, in _load
+    result = unpickler.load()
+  File "/usr/local/lib/python3.7/dist-packages/torch/serialization.py", line 845, in persistent_load
+    load_tensor(data_type, size, key, _maybe_decode_ascii(location))
+  File "/usr/local/lib/python3.7/dist-packages/torch/serialization.py", line 834, in load_tensor
+    loaded_storages[key] = restore_location(storage, location)
+  File "/usr/local/lib/python3.7/dist-packages/torch/serialization.py", line 811, in restore_location
+    return default_restore_location(storage, map_location)
+  File "/usr/local/lib/python3.7/dist-packages/torch/serialization.py", line 180, in default_restore_location
+    + location + ")")
+RuntimeError: don't know how to restore data location of torch.FloatStorage (tagged with best_model.pth)
+
